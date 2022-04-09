@@ -25,6 +25,7 @@ def find_substring(word):
             substring_list.append(word[i:j])
     return substring_list
 
+
 # Function that sorts the list according to length of list item
 def sort_list(given_list):
     final_list = sorted(given_list, key=len)
