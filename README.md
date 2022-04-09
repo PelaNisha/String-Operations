@@ -10,5 +10,5 @@ A string p is a prefix of a string t if there exists a string s  such that t = p
 ## Suffix
 A string s is a suffix of a string t if there exists a string p such that t = p s.
 
-## Use
+# Use
 This program prints the substring, prefix and suffix of a string given by the user.
