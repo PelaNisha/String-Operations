@@ -22,16 +22,16 @@ def find_substring(word):
     substring_list = []
     for i in range(0,len(word)):
         for j in range(i+1, len(word)+1):
-            if word[i:j] != " " and word[i:j]!= word:
-                substring_list.append(word[i:j])
+            substring_list.append(word[i:j])
     return substring_list
 
-
+# Function that sorts the list according to length of list item
 def sort_list(given_list):
     final_list = sorted(given_list, key=len)
     return final_list
 
 
+# User Input
 word= input("Enter the string: ")
 print("Prefix :",sort_list(find_prefix(word)),
       "\nSuffx :", sort_list(find_suffix(word)),
