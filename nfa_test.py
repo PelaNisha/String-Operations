@@ -1,13 +1,7 @@
 # NFA over {0, 1} that accepts substring 0110 or 1001
 
-def split(word):
-	li = []
-	for char in word:
-		li.append(char)
-	return li	
-
 word = input("Enter the string: ")
-list_word = split(word)
+list_word = list(word)
 index = len(word)
 
 
@@ -46,4 +40,4 @@ a = get_ans()
 if a == 'accepted':
 	print(a)
 else:
-	print('rejected')	
+	pass	
