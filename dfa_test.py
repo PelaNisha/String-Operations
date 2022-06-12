@@ -7,16 +7,8 @@ transition = {
 	'q2':{'a':'q0','b':'q1' }
 	}
 
-
-def split(word):
-	li = []
-	for char in word:
-		li.append(char)
-	return li	
-
-
 word = input("Enter the string: ")
-list_word = split(word)
+list_word = list(word)
 index = len(word)
 
 
@@ -32,7 +24,7 @@ def func():
 			
 	else:
 		return "string size is less"
-
+	
 
 # Function calling
 x = func()
