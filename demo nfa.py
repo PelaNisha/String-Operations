@@ -46,8 +46,9 @@ def get_final_states(current_state):
 x = get_final_states(current_state)
 print("Final states ", x)
 
+
 # If the accept_state if present in the final_states
-if accept_states in x:
+if accept_state in x:
 	print("String is valid!")
 else:
 	print("String is invalid!")	
