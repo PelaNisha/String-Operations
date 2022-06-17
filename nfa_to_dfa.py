@@ -20,24 +20,30 @@ initial_state=['q0']
 def get_nfa_states(initial_state):
 	ini0 = []
 	ini1 = []
+	li = []
 	start_state = initial_state
 	final_list.append(start_state)
 	for item in start_state:
-		print("List ",item)
+		# print("List ",item)
 		state0 = transition[item]['0']
 		ini0.append(state0)
 		print(item,"(0)","->" ,state0)
+	for i in ini0:
+		for j in i:
+			li.append(j)
+	print("LIST ", li)
 	for item in start_state:
 		state1 = transition[item]['1']
 		print(item,"(1)","->" ,state1)
 		ini1.append(state1)
-
+	
 	ini0.extend(ini1)
-	print("INI is ", ini0)
+	# print("INI is ", ini0)
 	for i in ini0:
 		if i not in final_list:
 			final_list.append(i)
-			print("NExt state ", i)
+			print("FINAL LIST ", final_list)
+			print("Next state ", i)
 			get_nfa_states(i)
 			
 	
