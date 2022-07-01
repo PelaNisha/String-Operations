@@ -1,4 +1,4 @@
-# Program that takes input as a string and find its suffix, prefix and substring
+# Program that takes input as a string and find its suffix, prefix and substring - lab1
 
 
 # Function that returns the prefix of a string
