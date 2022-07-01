@@ -1,6 +1,7 @@
 # Write a program to implement DFA over {0, 1}, 
 # that accept all the string that ends with 101.
 
+
 accept_states = ['q3']
 transition = {
 	'q0':{'0':'q0','1':'q1' },
