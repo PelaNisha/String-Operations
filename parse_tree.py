@@ -13,9 +13,11 @@ li = []
 for i in di.keys():
 	li.append(i)
 
-# The input string is “sab”
+	
 str ='sab'
 def parse_string(s, initial_string):
+	global new
+	new = ''
 	st = ''
 	p = di[s]
 	i_string = initial_string
@@ -24,15 +26,13 @@ def parse_string(s, initial_string):
 		if i not in li:
 			fi.append(i)
 			st = st+i
-			# print('string update',st)
-			# print("S ",s)
-			# print("ST ", st)
-			i_string = i_string.replace(s,st,1)
-			print("updated string ",i_string)
+			i_str = i_string.replace(s,st,1)
+			print("updated string ",i_str)
+			new = new+ i_str
+
 		else:
 			st = st+i
-			# print(st)
-			parse_string(i,i_string)
+			parse_string(i,new)
 	return fi
 			
 
