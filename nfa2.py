@@ -1,4 +1,4 @@
-# Construct a NFA over (a,b) that accepts string having "aa" as a substring
+# Construct a NFA over (0, 1) that accepts string ending with 11
 
 
 accept_state = 'q2'
