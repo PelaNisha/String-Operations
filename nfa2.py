@@ -1,10 +1,9 @@
-# Write a program to implement NFA over {0, 1},
-# that accept all the string that ends with 11.
+# Construct a NFA over (a,b) that accepts string having "aa" as a substring
 
 
-accept_state = ['q2']
+accept_state = 'q2'
 transition = {
-	'q0':{'0':['q0'],'1':['q1'] },
+	'q0':{'0':['q0'],'1':['q0', 'q1'] },
 	'q1':{'0':["don't care"],'1':['q2']},
 	'q2':{'0':["don't care"],'1':["don't care"]}
 	}
@@ -20,7 +19,6 @@ current_state = ['q0']
 # Returns the final states of the nfa
 def get_final_states(current_state):
 	if word_length>1:	
-		fi = []
 		# For each charater of the given word
 		for i in range(0,word_length):
 			li = []
@@ -33,13 +31,12 @@ def get_final_states(current_state):
 					pass
 				else:
 					new_state = transition[c][ch]
-					if new_state not in fi:
-						fi.append(new_state)
 					print(str(c)+" -> "+str(new_state))
-					# print('states:', new_state)
-			current_state = new_state
+					li.extend(new_state)
+					print('states:', li)
+			current_state = li
 			print("-----------")
-		return fi	
+		return li	
 			
 	else:
 		print("String size is less")
@@ -47,7 +44,7 @@ def get_final_states(current_state):
 
 
 x = get_final_states(current_state)
-print("Final state ", x)
+print("Final states ", x)
 
 
 # If the accept_state if present in the final_states
