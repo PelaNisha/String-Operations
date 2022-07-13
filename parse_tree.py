@@ -2,45 +2,38 @@
 # implement parse tree for the string produced by the grammar.
 
 
+# Production Function
 di = {
-	'S':'sAB',
-	'A':'a',
-	'B':'b'
+	'S':['AB'],
+	'A':['c','aA'],
+	'B':['d', 'bB']
 }
 
+
 fi = []
-li = []
-for i in di.keys():
-	li.append(i)
+str ='acbd'
+length_of_string = len(str)
 
-	
-str ='sab'
-def parse_string(s, initial_string):
-	global new
-	new = ''
-	st = ''
-	p = di[s]
-	i_string = initial_string
-	print(s, " -> ", p)
+
+# Parse Function
+def parse_string(c):
+	s = 'S'
+	initial = str[c]
+	p = di[s][0]
 	for i in p:
-		if i not in li:
-			fi.append(i)
-			st = st+i
-			i_str = i_string.replace(s,st,1)
-			print("updated string ",i_str)
-			new = new+ i_str
+		for j in di[i]:
+			if initial in j:
+				print(i , '->', j, " String : ", str[0:c+1])
+				fi.append(j)
+				if c != len(str)-1:
+					c = c +1
+					parse_string(c)
+				else:
+					pass
+	return "Done!"	
 
-		else:
-			st = st+i
-			parse_string(i,new)
-	return fi
-			
 
 start = "S"
-initial_string = 'sAB'
-x = parse_string(start,initial_string)
-final_string = ""
-
-for i in x:
-	final_string = final_string+i
-print(final_string)
+count = 0
+x = parse_string(count)
+print(x)
